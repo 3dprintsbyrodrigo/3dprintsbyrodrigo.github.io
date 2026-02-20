@@ -5,14 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3D Prints by Rodrigo</title>
 
+<!-- Fuente moderna -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<!-- Animaciones AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: 'Inter', sans-serif;
@@ -29,13 +33,10 @@ nav {
     background-color: #111318;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
-nav h1 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #00d4ff;
-}
+nav h1 { font-size: 1.2rem; font-weight: 600; color: #00d4ff; }
 
 nav a {
     text-decoration: none;
@@ -45,26 +46,15 @@ nav a {
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: #00d4ff;
-}
+nav a:hover { color: #00d4ff; }
 
 .hero {
     padding: 100px 8%;
     text-align: center;
 }
 
-.hero h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    max-width: 600px;
-    margin: auto;
-    color: #aaa;
-}
+.hero h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
+.hero p { max-width: 600px; margin: auto; color: #aaa; }
 
 .button {
     display: inline-block;
@@ -78,19 +68,11 @@ nav a:hover {
     transition: 0.3s;
 }
 
-.button:hover {
-    background: #00aacc;
-}
+.button:hover { background: #00aacc; }
 
-section {
-    padding: 80px 8%;
-}
+section { padding: 80px 8%; }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 1.8rem;
-}
+.section-title { text-align: center; margin-bottom: 50px; font-size: 1.8rem; }
 
 .gallery {
     display: grid;
@@ -101,12 +83,10 @@ section {
 .gallery img {
     width: 100%;
     border-radius: 12px;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
-.gallery img:hover {
-    transform: translateY(-5px);
-}
+.gallery img:hover { transform: translateY(-5px); }
 
 .card {
     background-color: #161a22;
@@ -115,10 +95,7 @@ section {
     text-align: center;
 }
 
-.card h3 {
-    margin-bottom: 15px;
-    color: #00d4ff;
-}
+.card h3 { margin-bottom: 15px; color: #00d4ff; }
 
 footer {
     background: #111318;
@@ -141,13 +118,13 @@ footer {
     </div>
 </nav>
 
-<section class="hero">
+<section class="hero" data-aos="fade-up">
     <h2>Impresión 3D profesional y personalizada</h2>
     <p>Prototipos funcionales, piezas técnicas y diseños a medida fabricados con precisión y calidad.</p>
     <a href="#contacto" class="button">Solicitar presupuesto</a>
 </section>
 
-<section id="servicios">
+<section id="servicios" data-aos="fade-up">
     <h2 class="section-title">Servicios</h2>
     <div class="gallery">
         <div class="card">
@@ -165,7 +142,7 @@ footer {
     </div>
 </section>
 
-<section id="galeria">
+<section id="galeria" data-aos="fade-up">
     <h2 class="section-title">Galería</h2>
     <div class="gallery">
         <img src="https://via.placeholder.com/500x400" alt="Proyecto 1">
@@ -174,11 +151,12 @@ footer {
     </div>
 </section>
 
-<section id="contacto">
+<section id="contacto" data-aos="fade-up">
     <h2 class="section-title">Contacto</h2>
     <div class="card">
         <p>Envíame tu archivo STL o tu idea y te enviaré presupuesto.</p>
-        <a href="mailto:TUEMAILAQUI@gmail.com" class="button">Contactar</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbBfb0UQtXiAv2ut-0Kfodn6FJ2Es-C_Ok50eB3ZWxz0hT6w/viewform" target="_blank" class="button">Subir archivo STL</a>
+        <p style="margin-top:15px;">O escríbeme directamente: <a href="mailto:3dprintsbyrodrigo@gmail.com" style="color:#00d4ff;">3dprintsbyrodrigo@gmail.com</a></p>
     </div>
 </section>
 
