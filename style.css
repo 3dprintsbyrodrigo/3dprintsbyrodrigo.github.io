@@ -32,7 +32,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #fff;
+    color: #00c3ff;
 }
 
 /* HERO */
@@ -92,28 +92,27 @@ nav a:hover {
     padding: 80px 20px;
 }
 
-.formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* CORREO DIRECTO */
+.correo-directo {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.formulario input,
-.formulario textarea {
-    padding: 14px;
-    border-radius: 8px;
-    border: none;
-    background: #1e1e1e;
-    color: #fff;
-}
-
-.formulario button {
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    background: #00c3ff;
+.correo-directo a {
+    color: #00c3ff;
+    font-size: 1.1em;
+    text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
+}
+
+.correo-directo a:hover {
+    text-decoration: underline;
+}
+
+/* FORMULARIO GOOGLE */
+.formulario-google iframe {
+    border: 1px solid #333;
+    border-radius: 12px;
 }
 
 /* FOOTER */
