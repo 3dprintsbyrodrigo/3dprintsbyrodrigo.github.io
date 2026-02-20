@@ -10,9 +10,10 @@
 
 <!-- Animaciones AOS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 1000, once: true });
+document.addEventListener("DOMContentLoaded", function() {
+    AOS.init({ duration: 1000, once: true });
+});
 </script>
 
 <style>
@@ -103,6 +104,10 @@ footer {
     padding: 30px;
     font-size: 0.85rem;
     color: #777;
+}
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
 }
 </style>
 </head>
