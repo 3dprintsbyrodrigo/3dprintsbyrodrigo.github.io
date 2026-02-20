@@ -1,4 +1,4 @@
-/* ---------------- Reset y body ---------------- */
+/* ---------------- Reset ---------------- */
 * {
     margin: 0;
     padding: 0;
@@ -7,39 +7,45 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f5f5f5; /* color claro, cambia a #111 para dark */
-    color: #111; /* texto oscuro, cambia a #fff para dark */
-    padding-top: 80px; /* espacio para header fijo */
+    background-color: #111;  /* fondo oscuro */
+    color: #eee;             /* texto claro */
+    padding-top: 80px;       /* espacio para header fijo */
 }
 
-/* ---------------- Header fijo ---------------- */
+/* ---------------- Header ---------------- */
 nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff; /* #111 para dark */
+    background-color: #1c1c1c; /* oscuro tech */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-bottom: 1px solid #333;
 }
 
 nav h1 {
     font-weight: 600;
+    color: #f0f0f0;
 }
 
 nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: #111; /* #fff para dark */
+    color: #eee;
     font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
 }
 
 nav a:hover {
-    color: #555; /* cambia según paleta */
+    background-color: #333;
+    color: #fff;
 }
 
 /* ---------------- Secciones ---------------- */
@@ -54,6 +60,16 @@ section {
 .section-title {
     font-size: 28px;
     margin-bottom: 25px;
+}
+
+/* ---------------- Hero ---------------- */
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
 }
 
 /* ---------------- Galería ---------------- */
@@ -77,16 +93,18 @@ section {
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .gallery-item img:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
 }
 
 .gallery-item p {
     margin-top: 10px;
     font-weight: 500;
+    color: #eee;
 }
 
 /* ---------------- Botones ---------------- */
@@ -94,49 +112,42 @@ section {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 25px;
-    background-color: #111; /* oscuro para profesional */
-    color: #fff;
+    background-color: #333;
+    color: #eee;
     text-decoration: none;
     border-radius: 8px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #444;
+    background-color: #555;
+    color: #fff;
 }
 
 /* ---------------- Contacto ---------------- */
 .card {
-    background-color: #fff; /* #222 para dark */
+    background-color: #1c1c1c;
     padding: 25px;
     max-width: 500px;
     margin: 40px auto;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
 }
 
 .card p {
     margin-bottom: 15px;
     font-size: 16px;
+    color: #eee;
 }
 
 /* ---------------- Footer ---------------- */
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #eaeaea; /* #111 para dark */
-    color: #111; /* #fff para dark */
-}
-
-/* ---------------- Hero ---------------- */
-.hero h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 18px;
+    background-color: #1c1c1c;
+    color: #eee;
+    border-top: 1px solid #333;
 }
 
 /* ---------------- Lightbox ---------------- */
@@ -145,7 +156,7 @@ footer {
     position:fixed;
     top:0; left:0;
     width:100%; height:100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     justify-content:center;
     align-items:center;
     z-index:2000;
