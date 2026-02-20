@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="main.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => AOS.init());
+</script>
 </head>
 <body style="padding-top:80px;">
 
@@ -22,26 +24,51 @@
 
 <section id="galeria" data-aos="fade-up">
     <h2 class="section-title">Galería Completa</h2>
-    <div class="gallery">
-        <div class="gallery-item"><img src="imagenes/llavero_bobina_filamento.jpg" alt="Llavero bobina filamento"><p>Llavero bobina filamento</p></div>
-        <div class="gallery-item"><img src="imagenes/llavero_osito.jpg" alt="Llavero osito"><p>Llavero osito</p></div>
-        <div class="gallery-item"><img src="imagenes/targetero_logo_custom.jpg" alt="Targetero logo custom"><p>Targetero logo custom</p></div>
-        <div class="gallery-item"><img src="imagenes/boton_de_seguridad_abierto.jpg" alt="Botón de seguridad abierto"><p>Botón de seguridad abierto</p></div>
-        <div class="gallery-item"><img src="imagenes/boton_de_seguridad_cerrado.jpg" alt="Botón de seguridad cerrado"><p>Botón de seguridad cerrado</p></div>
-        <div class="gallery-item"><img src="imagenes/protector_smartwach.jpg" alt="Protector smartwatch"><p>Protector smartwatch</p></div>
-        <div class="gallery-item"><img src="imagenes/mini_soporte_regulable_para_movil.jpg" alt="Mini soporte regulable para móvil"><p>Mini soporte regulable</p></div>
-        <div class="gallery-item"><img src="imagenes/extractor_teclas_teclado_mecanico.jpg" alt="Extractor de teclas"><p>Extractor de teclas</p></div>
-        <div class="gallery-item"><img src="imagenes/llavero_moneda_carro_de_compra.jpg" alt="Llavero moneda carro de compra"><p>Llavero moneda carro de compra</p></div>
-        <div class="gallery-item"><img src="imagenes/soporte_para_movil.jpg" alt="Soporte para móvil"><p>Soporte para móvil</p></div>
-        <div class="gallery-item"><img src="imagenes/soporte_con_iman_para_movil.jpg" alt="Soporte con imán"><p>Soporte con imán</p></div>
-        <div class="gallery-item"><img src="imagenes/raton_funcional_completamente_impreso.jpg" alt="Ratón funcional"><p>Ratón funcional impreso</p></div>
-        <div class="gallery-item"><img src="imagenes/carrete_cable.jpg" alt="Carrete de cable"><p>Carrete de cable</p></div>
-    </div>
+    <div class="gallery" id="gallery"></div>
 </section>
 
 <footer>© 2026 3D Prints by Rodrigo</footer>
 
-<div id="lightbox"><img><span class="close">×</span></div>
+<!-- Lightbox para ver las imágenes en grande -->
+<div id="lightbox">
+  <img>
+  <span class="close">×</span>
+</div>
+
+<script>
+// Función para cargar la galería desde imagenes.json
+fetch('imagenes.json')
+  .then(res => res.json())
+  .then(data => {
+    const gallery = document.getElementById('gallery');
+    data.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'gallery-item';
+      div.innerHTML = `<img src="${item.src}" alt="${item.titulo}"><p>${item.titulo}</p>`;
+      gallery.appendChild(div);
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    const lbClose = lightbox.querySelector('.close');
+
+    gallery.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lbClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', e => {
+      if(e.target === lightbox) lightbox.style.display = 'none';
+    });
+  });
+</script>
 
 </body>
 </html>
