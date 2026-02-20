@@ -15,43 +15,33 @@ body {
 /* ---------------- Header ---------------- */
 /* ===== NAVBAR ===== */
 nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1a1a1a;
-  border-bottom: 1px solid #333;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 }
 
-.nav-container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+nav h1 {
+    font-size: 1.4em;
+    font-weight: 600;
 }
 
-.nav-container h1 {
-  margin: 0;
-  font-size: 1.4em;
-  font-weight: 600;
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.95em;
+    transition: 0.3s;
 }
 
-.nav-container a {
-  color: #ccc;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 0.95em;
-  transition: 0.3s;
-}
-
-.nav-container a:hover {
-  color: #00c3ff;
-}
-
-.nav-container .active {
-  color: #00c3ff;
+nav a:hover {
+    color: #00c3ff;
 }
 
 /* ---------------- Secciones ---------------- */
