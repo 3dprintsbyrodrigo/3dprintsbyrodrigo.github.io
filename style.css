@@ -13,39 +13,45 @@ body {
 }
 
 /* ---------------- Header ---------------- */
+/* ===== NAVBAR ===== */
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1c1c1c; /* oscuro tech */
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    border-bottom: 1px solid #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+  z-index: 1000;
 }
 
-nav h1 {
-    font-weight: 600;
-    color: #f0f0f0;
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #eee;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
+.nav-container h1 {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 600;
 }
 
-nav a:hover {
-    background-color: #333;
-    color: #fff;
+.nav-container a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.95em;
+  transition: 0.3s;
+}
+
+.nav-container a:hover {
+  color: #00c3ff;
+}
+
+.nav-container .active {
+  color: #00c3ff;
 }
 
 /* ---------------- Secciones ---------------- */
