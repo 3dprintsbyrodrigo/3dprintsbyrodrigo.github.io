@@ -4,117 +4,235 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Galería - 3D Prints by Rodrigo</title>
+
 <style>
 body {
-  margin:0;
-  padding-top:80px; /* espacio para navbar fija */
+  margin: 0;
   font-family: Inter, sans-serif;
-  background:#111;
-  color:#eee;
+  background: #111;
+  color: #eee;
+  padding-top: 80px;
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== */
 nav {
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#222;
-  padding:15px 20px;
-  display:flex;
+  top: 0;
+  width: 100%;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
   justify-content: space-between;
-  align-items:center;
-  z-index:1000;
+  align-items: center;
 }
-nav h1 { margin:0; font-size:1.5em; }
-nav a { color:#eee; text-decoration:none; margin-left:15px; padding:6px 12px; border-radius:5px; transition:0.3s; }
-nav a:hover { background:#444; }
 
-/* Galería */
-.section-title { text-align:center; font-size:2em; margin-bottom:20px; }
+.nav-container h1 {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.nav-container a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.95em;
+  transition: 0.3s;
+}
+
+.nav-container a:hover {
+  color: #00c3ff;
+}
+
+.nav-container .active {
+  color: #00c3ff;
+}
+
+/* ===== GALERÍA ===== */
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
 .gallery {
-  display:flex;
-  flex-wrap: wrap;
-  justify-content:center;
-  gap:15px;
-  padding:0 20px 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 20px 50px 20px;
 }
+
 .gallery-item {
-  background:#222;
-  border-radius:8px;
-  overflow:hidden;
-  width:200px;
-  text-align:center;
-  cursor:pointer;
-  transition: transform 0.2s;
+  background: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.gallery-item img { width:100%; display:block; }
-.gallery-item p { margin:8px 0; font-size:0.9em; }
-.gallery-item:hover { transform: scale(1.05); }
 
-/* Footer */
+.gallery-item img {
+  width: 100%;
+  display: block;
+}
+
+.gallery-item p {
+  margin: 10px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #ccc;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== FOOTER ===== */
 footer {
-  text-align:center;
-  padding:20px;
-  background:#222;
-  margin-top:40px;
+  text-align: center;
+  padding: 25px;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  font-size: 0.9em;
+  color: #888;
 }
 
-/* Lightbox */
+/* ===== LIGHTBOX ===== */
 #lightbox {
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.9);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
 }
-#lightbox img { max-width:90%; max-height:90%; border-radius:8px; }
-#lightbox .close { position:absolute; top:20px; right:30px; font-size:2em; color:#fff; cursor:pointer; }
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
 </style>
 </head>
+
 <body>
 
 <nav>
-  <h1>3D Prints by Rodrigo</h1>
-  <div>
-    <a href="index.html">Inicio</a>
-    <a href="galeria.html">Galería</a>
-    <a href="contacto.html">Contacto</a>
+  <div class="nav-container">
+    <h1>3D Prints by Rodrigo</h1>
+    <div>
+      <a href="index.html">Inicio</a>
+      <a href="galeria.html" class="active">Galería</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
   </div>
 </nav>
 
-<section id="galeria">
+<section>
   <h2 class="section-title">Galería Completa</h2>
+
   <div class="gallery">
-    <div class="gallery-item"><img src="imagenes/llavero_bobina_filamento.jpg" alt="Llavero bobina filamento"><p>Llavero bobina filamento</p></div>
-    <div class="gallery-item"><img src="imagenes/llavero_osito.jpg" alt="Llavero osito"><p>Llavero osito</p></div>
-    <div class="gallery-item"><img src="imagenes/targetero_logo_custom.jpg" alt="Targetero logo custom"><p>Targetero logo custom</p></div>
-    <div class="gallery-item"><img src="imagenes/boton_de_seguridad_abierto.jpg" alt="Botón de seguridad abierto"><p>Botón de seguridad abierto</p></div>
-    <div class="gallery-item"><img src="imagenes/boton_de_seguridad_cerrado.jpg" alt="Botón de seguridad cerrado"><p>Botón de seguridad cerrado</p></div>
-    <div class="gallery-item"><img src="imagenes/protector_smartwach.jpg" alt="Protector smartwatch"><p>Protector smartwatch</p></div>
-    <div class="gallery-item"><img src="imagenes/mini_soporte_regulable_para_movil.jpg" alt="Mini soporte regulable"><p>Mini soporte regulable</p></div>
-    <div class="gallery-item"><img src="imagenes/extractor_teclas_teclado_mecanico.jpg" alt="Extractor teclas"><p>Extractor teclas</p></div>
-    <div class="gallery-item"><img src="imagenes/llavero_moneda_carro_de_compra.jpg" alt="Llavero moneda"><p>Llavero moneda</p></div>
-    <div class="gallery-item"><img src="imagenes/soporte_para_movil.jpg" alt="Soporte para móvil"><p>Soporte para móvil</p></div>
-    <div class="gallery-item"><img src="imagenes/soporte_con_iman_para_movil.jpg" alt="Soporte con imán"><p>Soporte con imán</p></div>
-    <div class="gallery-item"><img src="imagenes/raton_funcional_completamente_impreso.jpg" alt="Ratón funcional"><p>Ratón funcional completamente impreso</p></div>
-    <div class="gallery-item"><img src="imagenes/carrete_cable.jpg" alt="Carrete cable"><p>Carrete cable</p></div>
+    <div class="gallery-item">
+      <img src="imagenes/llavero_bobina_filamento.jpg">
+      <p>Llavero bobina filamento</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/llavero_osito.jpg">
+      <p>Llavero osito</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/targetero_logo_custom.jpg">
+      <p>Targetero logo custom</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/boton_de_seguridad_abierto.jpg">
+      <p>Botón de seguridad abierto</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/boton_de_seguridad_cerrado.jpg">
+      <p>Botón de seguridad cerrado</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/protector_smartwach.jpg">
+      <p>Protector smartwatch</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/mini_soporte_regulable_para_movil.jpg">
+      <p>Mini soporte regulable</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/extractor_teclas_teclado_mecanico.jpg">
+      <p>Extractor teclas</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/llavero_moneda_carro_de_compra.jpg">
+      <p>Llavero moneda</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/soporte_para_movil.jpg">
+      <p>Soporte para móvil</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/soporte_con_iman_para_movil.jpg">
+      <p>Soporte con imán</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/raton_funcional_completamente_impreso.jpg">
+      <p>Ratón funcional completamente impreso</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="imagenes/carrete_cable.jpg">
+      <p>Carrete cable</p>
+    </div>
+
   </div>
 </section>
 
-<footer>© 2026 3D Prints by Rodrigo | Contacto: 3dprintsbyrodrigo@gmail.com</footer>
+<footer>
+© 2026 3D Prints by Rodrigo | Contacto: 3dprintsbyrodrigo@gmail.com
+</footer>
 
-<!-- Lightbox -->
+<!-- LIGHTBOX -->
 <div id="lightbox">
   <img>
   <span class="close">&times;</span>
 </div>
 
 <script>
-// Lightbox funcional
 const lightbox = document.getElementById('lightbox');
 const lbImg = lightbox.querySelector('img');
 const lbClose = lightbox.querySelector('.close');
@@ -126,8 +244,10 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
   });
 });
 
-lbClose.addEventListener('click', () => { lightbox.style.display = 'none'; });
-lightbox.addEventListener('click', e => { if(e.target === lightbox) lightbox.style.display = 'none'; });
+lbClose.addEventListener('click', () => lightbox.style.display = 'none');
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) lightbox.style.display = 'none';
+});
 </script>
 
 </body>
