@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto - 3D Prints by Rodrigo</title>
+<title>Contacto | 3D Prints by Rodrigo</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="main.js" defer></script>
 </head>
+
 <body style="padding-top:80px;">
 
 <nav>
@@ -20,18 +21,18 @@
     </div>
 </nav>
 
-<section id="contacto" data-aos="fade-up">
+<section class="contacto" data-aos="fade-up">
     <h2 class="section-title">Contacto</h2>
-    <div class="card">
-        <p>Envíame tu archivo STL o tu idea y te enviaré presupuesto.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbBfb0UQtXiAv2ut-0Kfodn6FJ2Es-C_Ok50eB3ZWxz0hT6w/viewform" target="_blank" class="button">Subir archivo STL</a>
-        <p style="margin-top:15px;">O escríbeme directamente: <a href="mailto:3dprintsbyrodrigo@gmail.com">3dprintsbyrodrigo@gmail.com</a></p>
-    </div>
+
+    <form class="formulario">
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu email" required>
+        <textarea placeholder="Cuéntame tu proyecto..." rows="5" required></textarea>
+        <button type="submit" class="button">Enviar mensaje</button>
+    </form>
 </section>
 
 <footer>© 2026 3D Prints by Rodrigo</footer>
-
-<div id="lightbox"><img><span class="close">×</span></div>
 
 </body>
 </html>
