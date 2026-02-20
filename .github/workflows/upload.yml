@@ -1,0 +1,45 @@
+name: Auto Gallery Update
+
+on:
+  push:
+    paths:
+      - 'uploads/**'  # carpeta donde subirás fotos temporalmente
+
+jobs:
+  update-gallery:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Config Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Move new images to imagenes/
+        run: |
+          mkdir -p imagenes
+          for file in uploads/*; do
+            mv "$file" imagenes/
+          done
+
+      - name: Update imagenes.json
+        run: |
+          FILE="imagenes.json"
+          echo "[" > $FILE
+          for img in imagenes/*; do
+            NAME=$(basename "$img")
+            TITLE="${NAME%.*}"  # usa el nombre del archivo como título
+            echo "  {\"src\": \"imagenes/$NAME\", \"titulo\": \"$TITLE\"}," >> $FILE
+          done
+          # quita la última coma
+          sed -i '$ s/,$//' $FILE
+          echo "]" >> $FILE
+
+      - name: Commit and push
+        run: |
+          git add imagenes.json imagenes/*
+          git commit -m "Update gallery via GitHub Actions" || echo "No changes to commit"
+          git push
