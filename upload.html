@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subir Imagen - 3D Prints by Rodrigo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="padding:40px; background:#111; color:#eee; font-family:Inter, sans-serif;">
+
+<h1>Subir Imagen a la Galería</h1>
+<p>Este panel es privado. Solo tú debes usarlo.</p>
+
+<form id="uploadForm">
+  <label for="titulo">Título de la imagen:</label><br>
+  <input type="text" id="titulo" required style="padding:8px; width:100%; margin-bottom:15px;"><br>
+
+  <label for="archivo">Selecciona la imagen (JPG/PNG):</label><br>
+  <input type="file" id="archivo" accept=".jpg,.jpeg,.png" required style="margin-bottom:15px;"><br>
+
+  <label for="token">GitHub Personal Access Token:</label><br>
+  <input type="password" id="token" placeholder="Introduce tu PAT" required style="padding:8px; width:100%; margin-bottom:15px;"><br>
+
+  <button type="submit" style="padding:10px 25px; background:#333; color:#eee; border:none; border-radius:6px;">Subir</button>
+</form>
+
+<p id="status" style="margin-top:20px;"></p>
+
+<script>
+document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fileInput = document.getElementById('archivo');
+  const titulo = document.getElementById('titulo').value.trim();
+  const token = document.getElementById('token').value.trim();
+  const status = document.getElementById('status');
+
+  if (!fileInput.files.length) return alert('Selecciona un archivo');
+
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+
+  reader.onloadend = async () => {
+    const content = reader.result.split(',')[1]; // Base64
+    const path = `uploads/${file.name}`;
+
+    const response = await fetch(`https://api.github.com/repos/3dprintsbyrodrigo/3dprintsbyrodrigo.github.io/contents/${path}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: `Subida automática: ${file.name}`,
+        content: content
+      })
+    });
+
+    const data = await response.json();
+    if (data.content) {
+      status.innerText = `¡Imagen subida! Ahora GitHub Actions actualizará la galería automáticamente.`;
+      document.getElementById('uploadForm').reset();
+    } else {
+      status.innerText = `Error: ${data.message || JSON.stringify(data)}`;
+    }
+  };
+
+  reader.readAsDataURL(file);
+});
+</script>
+
+</body>
+</html>
