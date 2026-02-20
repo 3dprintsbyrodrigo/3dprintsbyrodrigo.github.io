@@ -18,21 +18,41 @@ nav {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
+    flex-wrap: wrap; /* permite que los links bajen si no caben */
 }
 
 nav h1 {
     font-size: 1.5em;
 }
 
+nav .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 nav a {
     color: #ccc;
     text-decoration: none;
-    margin-left: 30px;
+    margin-left: 0; /* ya usamos gap */
     transition: 0.3s;
 }
 
 nav a:hover {
     color: #00c3ff;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    nav {
+        padding: 18px 20px;
+    }
+
+    nav .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
 
 /* HERO */
