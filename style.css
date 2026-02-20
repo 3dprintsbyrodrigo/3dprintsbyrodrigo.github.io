@@ -10,31 +10,35 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 18px 50px;
+    padding: 18px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(20,20,20,0.9);
+    background: rgba(20,20,20,0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
-    flex-wrap: wrap; /* permite que los links bajen si no caben */
+    flex-wrap: wrap; /* permite que los elementos bajen si no caben */
 }
 
 nav h1 {
     font-size: 1.5em;
+    margin: 0;
+    flex-shrink: 0; /* evita que se achique */
 }
 
 nav .nav-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    min-width: 200px; /* asegura que los links no colapsen */
 }
 
 nav a {
     color: #ccc;
     text-decoration: none;
-    margin-left: 0; /* ya usamos gap */
     transition: 0.3s;
 }
 
@@ -42,10 +46,10 @@ nav a:hover {
     color: #00c3ff;
 }
 
-/* Ajuste para móviles */
-@media (max-width: 600px) {
+/* AJUSTES MÓVIL */
+@media (max-width: 768px) {
     nav {
-        padding: 18px 20px;
+        padding: 15px 20px;
     }
 
     nav .nav-links {
@@ -54,7 +58,6 @@ nav a:hover {
         margin-top: 10px;
     }
 }
-
 /* HERO */
 .hero {
     padding: 120px 20px;
