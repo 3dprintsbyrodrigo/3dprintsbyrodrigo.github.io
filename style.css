@@ -1,3 +1,4 @@
+/* GENERAL */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,13 +19,13 @@ nav {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
-    flex-wrap: wrap; /* permite que los elementos bajen si no caben */
+    flex-wrap: wrap;
 }
 
 nav h1 {
     font-size: 1.5em;
     margin: 0;
-    flex-shrink: 0; /* evita que se achique */
+    flex-shrink: 0;
 }
 
 nav .nav-links {
@@ -33,7 +34,7 @@ nav .nav-links {
     gap: 25px;
     justify-content: flex-end;
     flex: 1 1 auto;
-    min-width: 200px; /* asegura que los links no colapsen */
+    min-width: 200px;
 }
 
 nav a {
@@ -46,7 +47,7 @@ nav a:hover {
     color: #00c3ff;
 }
 
-/* AJUSTES MÓVIL */
+/* MÓVIL NAV */
 @media (max-width: 768px) {
     nav {
         padding: 15px 20px;
@@ -58,6 +59,7 @@ nav a:hover {
         margin-top: 10px;
     }
 }
+
 /* HERO */
 .hero {
     padding: 120px 20px;
@@ -106,6 +108,12 @@ nav a:hover {
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #00a3d1;
 }
 
 /* CONTACTO */
@@ -118,7 +126,7 @@ nav a:hover {
 /* CORREO DIRECTO */
 .correo-directo {
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 30px;
 }
 
 .correo-directo a {
@@ -132,10 +140,53 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* FORMULARIO GOOGLE */
-.formulario-google iframe {
-    border: 1px solid #333;
+/* MODAL FORMULARIO GOOGLE */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    margin: 50px auto;
+    padding: 20px;
     border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.modal .close {
+    color: #fff;
+    float: right;
+    font-size: 32px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* BOTÓN FORMULARIO */
+#openForm {
+    padding: 12px 25px;
+    background: #00c3ff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#openForm:hover {
+    background: #00a3d1;
 }
 
 /* FOOTER */
