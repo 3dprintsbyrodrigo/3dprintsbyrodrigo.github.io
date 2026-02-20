@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    AOS.init();
-
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = lightbox?.querySelector("img");
     const closeBtn = document.querySelector(".close");
