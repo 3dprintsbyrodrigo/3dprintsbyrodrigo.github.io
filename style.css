@@ -6,12 +6,12 @@ body {
     color: #fff;
 }
 
-/* NAVBAR */
+/* NAVBAR DEFINITIVA */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 18px 40px;
+    padding: 12px 30px; /* un poco más compacto */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,38 +19,40 @@ nav {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
-    flex-wrap: wrap;
 }
 
 nav h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 0;
-    flex-shrink: 0;
+    flex-shrink: 1; /* puede reducirse si hace falta */
+    min-width: 0; /* evita overflow */
 }
 
 nav .nav-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: flex-end;
-    flex: 1 1 auto;
-    min-width: 200px;
+    gap: 20px;
+    flex-shrink: 1;
+    overflow-x: auto; /* permite scroll horizontal si los links no caben */
+    -webkit-overflow-scrolling: touch; /* suave en móviles */
 }
 
-nav a {
+nav .nav-links a {
     color: #ccc;
     text-decoration: none;
+    white-space: nowrap; /* evita que el texto se rompa */
     transition: 0.3s;
+    padding: 5px 0;
 }
 
-nav a:hover {
+nav .nav-links a:hover {
     color: #00c3ff;
 }
 
-/* MÓVIL NAV */
+/* MÓVIL */
 @media (max-width: 768px) {
     nav {
-        padding: 15px 20px;
+        padding: 10px 15px;
+        flex-wrap: wrap;
     }
 
     nav .nav-links {
@@ -59,7 +61,6 @@ nav a:hover {
         margin-top: 10px;
     }
 }
-
 /* HERO */
 .hero {
     padding: 120px 20px;
