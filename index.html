@@ -5,111 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3D Prints by Rodrigo</title>
 
-<!-- Fuente moderna -->
+<!-- Fuente -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- CSS externo -->
+<link rel="stylesheet" href="style.css">
 
 <!-- Animaciones AOS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    AOS.init({ duration: 1000, once: true });
-});
-</script>
-
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0f1115;
-    color: #eaeaea;
-    line-height: 1.6;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    background-color: #111318;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav h1 { font-size: 1.2rem; font-weight: 600; color: #00d4ff; }
-
-nav a {
-    text-decoration: none;
-    color: #ccc;
-    margin-left: 25px;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-nav a:hover { color: #00d4ff; }
-
-.hero {
-    padding: 100px 8%;
-    text-align: center;
-}
-
-.hero h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
-.hero p { max-width: 600px; margin: auto; color: #aaa; }
-
-.button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 30px;
-    background: #00d4ff;
-    color: #000;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.button:hover { background: #00aacc; }
-
-section { padding: 80px 8%; }
-
-.section-title { text-align: center; margin-bottom: 50px; font-size: 1.8rem; }
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 12px;
-    transition: transform 0.3s;
-}
-
-.gallery img:hover { transform: translateY(-5px); }
-
-.card {
-    background-color: #161a22;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.card h3 { margin-bottom: 15px; color: #00d4ff; }
-
-footer {
-    background: #111318;
-    text-align: center;
-    padding: 30px;
-    font-size: 0.85rem;
-    color: #777;
-}
-  [data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-}
-</style>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="main.js"></script>
 </head>
 
 <body>
@@ -150,9 +55,19 @@ footer {
 <section id="galeria" data-aos="fade-up">
     <h2 class="section-title">Galería</h2>
     <div class="gallery">
-        <img src="https://via.placeholder.com/500x400" alt="Proyecto 1">
-        <img src="https://via.placeholder.com/500x400" alt="Proyecto 2">
-        <img src="https://via.placeholder.com/500x400" alt="Proyecto 3">
+        <img src="imagenes/llavero_bobina_filamento.jpg" alt="Llavero bobina filamento">
+        <img src="imagenes/llavero_osito.jpg" alt="Llavero osito">
+        <img src="imagenes/targetero_logo_custom.jpg" alt="Targetero logo custom">
+        <img src="imagenes/boton_de_seguridad_abierto.jpg" alt="Botón de seguridad abierto">
+        <img src="imagenes/boton_de_seguridad_cerrado.jpg" alt="Botón de seguridad cerrado">
+        <img src="imagenes/protector_smartwach.jpg" alt="Protector smartwatch">
+        <img src="imagenes/mini_soporte_regulable_para_movil.jpg" alt="Mini soporte regulable para móvil">
+        <img src="imagenes/extractor_teclas_teclado_mecanico.jpg" alt="Extractor de teclas teclado mecánico">
+        <img src="imagenes/llavero_moneda_carro_de_compra.jpg" alt="Llavero moneda carro de compra">
+        <img src="imagenes/soporte_para_movil.jpg" alt="Soporte para móvil">
+        <img src="imagenes/soporte_con_iman_para_movil.jpg" alt="Soporte con imán para móvil">
+        <img src="imagenes/raton_funcional_completamente_impreso.jpg" alt="Ratón funcional completamente impreso">
+        <img src="imagenes/carrete_cable.jpg" alt="Carrete de cable">
     </div>
 </section>
 
