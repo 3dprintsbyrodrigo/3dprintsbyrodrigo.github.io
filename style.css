@@ -1,10 +1,24 @@
-/* ---------------- Header fijo y padding top ---------------- */
+/* ---------------- Reset y body ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5; /* color claro, cambia a #111 para dark */
+    color: #111; /* texto oscuro, cambia a #fff para dark */
+    padding-top: 80px; /* espacio para header fijo */
+}
+
+/* ---------------- Header fijo ---------------- */
 nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff; /* o #111 si dark */
+    background-color: #fff; /* #111 para dark */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -13,13 +27,22 @@ nav {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    padding-top: 80px; /* espacio para header fijo */
+nav h1 {
+    font-weight: 600;
 }
 
-/* ---------------- Secciones centradas ---------------- */
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #111; /* #fff para dark */
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #555; /* cambia según paleta */
+}
+
+/* ---------------- Secciones ---------------- */
 section {
     max-width: 1200px;
     margin: 0 auto 50px auto;
@@ -27,18 +50,22 @@ section {
     text-align: center;
 }
 
-/* ---------------- Proyectos destacados ---------------- */
-#destacadas .gallery {
+/* ---------------- Títulos ---------------- */
+.section-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* ---------------- Galería ---------------- */
+.gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
 }
 
-/* Cada item de galería */
 .gallery-item {
-    flex: 1 1 250px; /* ancho mínimo, se adapta */
+    flex: 1 1 250px;
     max-width: 300px;
     display: flex;
     flex-direction: column;
@@ -57,12 +84,17 @@ section {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* ---------------- Botón ---------------- */
+.gallery-item p {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* ---------------- Botones ---------------- */
 .button {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 25px;
-    background-color: #111;
+    background-color: #111; /* oscuro para profesional */
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
@@ -74,8 +106,8 @@ section {
 }
 
 /* ---------------- Contacto ---------------- */
-#contacto .card {
-    background-color: #f5f5f5;
+.card {
+    background-color: #fff; /* #222 para dark */
     padding: 25px;
     max-width: 500px;
     margin: 40px auto;
@@ -84,7 +116,7 @@ section {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-#contacto .card p {
+.card p {
     margin-bottom: 15px;
     font-size: 16px;
 }
@@ -93,6 +125,42 @@ section {
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #f2f2f2;
-    margin-top: 50px;
+    background-color: #eaeaea; /* #111 para dark */
+    color: #111; /* #fff para dark */
+}
+
+/* ---------------- Hero ---------------- */
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* ---------------- Lightbox ---------------- */
+#lightbox {
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+#lightbox img {
+    max-width:90%;
+    max-height:90%;
+}
+
+#lightbox .close {
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:#fff;
+    cursor:pointer;
 }
