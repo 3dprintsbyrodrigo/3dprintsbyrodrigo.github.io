@@ -1,8 +1,7 @@
 <?php
 $dir = "imagenes/";
-$images = glob($dir . "*.jpg"); // Cambia si tienes otros formatos
+$images = glob($dir . "*.jpg");
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
