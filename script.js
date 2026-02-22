@@ -1,5 +1,5 @@
-// Animación suave para secciones
-const cards = document.querySelectorAll('.proceso-grid > div, .material-card, .capacidad');
+// Animación suave scroll reveal
+const elements = document.querySelectorAll('.card, .proceso-grid > div, .material-card, .capacidad');
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -7,6 +7,6 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add('visible');
         }
     });
-},{threshold:0.1});
+},{ threshold: 0.1 });
 
-cards.forEach(el => observer.observe(el));
+elements.forEach(el => observer.observe(el));
