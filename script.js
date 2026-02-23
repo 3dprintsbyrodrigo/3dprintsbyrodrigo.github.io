@@ -12,9 +12,11 @@ const observer = new IntersectionObserver(entries => {
 elements.forEach(el => observer.observe(el));
 
 // Lightbox
-import('https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js').then(() => {
-    const lightbox = GLightbox();
-});
+if (typeof Fancybox !== 'undefined') {
+    Fancybox.bind("[data-fancybox]", {
+        // Options
+    });
+}
 
 // Burger menu
 const burger = document.querySelector('.burger');
@@ -23,4 +25,19 @@ const navUl = document.querySelector('nav ul');
 burger.addEventListener('click', () => {
     navUl.classList.toggle('active');
     burger.classList.toggle('active');
+});
+
+// Back to Top Button
+const backToTopBtn = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
